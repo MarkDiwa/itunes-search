@@ -20,11 +20,11 @@ class SearchResultDetailViewModel {
     }
     
     var cellPrice: String {
-        return "\(result.trackPrice)"
+        return "\(result.trackPrice) \(result.currency)"
     }
     
     var cellGenre: String {
-        return result.primaryGenreName.rawValue
+        return result.primaryGenreName
     }
     
     var cellArtWork: URL? {

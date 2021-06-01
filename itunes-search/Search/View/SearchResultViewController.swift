@@ -25,11 +25,12 @@ class SearchResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        search()
     }
     
     @objc
     private func refresh() {
-        print("Refresh")
+        search()
     }
 
 }
@@ -55,9 +56,9 @@ extension SearchResultViewController: UITableViewDataSource, UITableViewDelegate
 
 extension SearchResultViewController: UISearchBarDelegate {
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        searchResultViewModel.searchString = searchText
-        tableView.reloadData()
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        search()
     }
 }
 
@@ -86,12 +87,27 @@ private extension SearchResultViewController {
     
     func setupSearchBar() {
         searchBar.delegate = self
+        searchBar.text = searchResultViewModel.searchString
     }
     
     func reloadTable() {
         tableView.tableHeaderView = nil
         tableView.refreshControl?.endRefreshing()
         tableView.reloadData()
+    }
+    
+    func search() {
+        searchResultViewModel.searchString = searchBar.text ?? ""
+        searchResultViewModel.search { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                self.reloadTable()
+            case .failure(let error):
+                self.reloadTable()
+                print(error.localizedDescription)
+            }
+        }
     }
     
     var spinnerView: UIView {

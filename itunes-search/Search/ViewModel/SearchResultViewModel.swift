@@ -9,7 +9,7 @@ import Alamofire
 
 class SearchResultsViewModel {
     
-    var searchString = ""
+    var searchString = "star"
     private var usersResult: SearcAPIResult?
 
     var count: Int {
