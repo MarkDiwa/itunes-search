@@ -9,9 +9,9 @@ import Foundation
 
 class SearchResultDetailViewModel {
     
-    private var result: Result
+    private var result: SearchResult
     
-    init(result: Result) {
+    init(result: SearchResult) {
         self.result = result
     }
     

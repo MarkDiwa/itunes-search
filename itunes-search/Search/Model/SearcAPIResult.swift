@@ -1,5 +1,5 @@
 //
-//  SearchResult.swift
+//  SearcAPIResult.swift
 //  itunes-search
 //
 //  Created by Mark Dennis Diwa on 6/1/21.
@@ -8,13 +8,14 @@
 import Foundation
 
 // MARK: - SearchResult
-struct SearchResult: Codable {
+struct SearcAPIResult: Codable {
     var resultCount: Int
-    var results: [Result]
+    var results: [SearchResult]
+    var errorMessage: String
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct SearchResult: Codable {
     var wrapperType: String
     var kind: String
     var collectionID: Int?
@@ -93,12 +94,13 @@ enum PrimaryGenreName: String, Codable {
     case sports = "Sports"
 }
 
-extension SearchResult {
+extension SearcAPIResult {
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.resultCount = try container.decode(forKey: .resultCount, defaultValue: 0)
         self.results = try container.decode(forKey: .results, defaultValue: [])
+        self.errorMessage = try container.decode(forKey: .errorMessage, defaultValue: "")
     }
 }
 

@@ -46,11 +46,11 @@ enum SearchAPI {
                        country: String = "au",
                        media: String = "movie",
                        limit: Int = 50,
-                       completion:  @escaping (AFDataResponse<SearchResult>) -> Void) {
+                       completion:  @escaping (AFDataResponse<SearcAPIResult>) -> Void) {
         AF.request(SearchRequest.search(term,
                                         country: country,
                                         media: media,
-                                        limit: limit)).responseDecodable(of: SearchResult.self,
+                                        limit: limit)).responseDecodable(of: SearcAPIResult.self,
                                                                          completionHandler: completion)
     }
 }
