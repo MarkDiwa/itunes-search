@@ -5,6 +5,7 @@
 //  Created by Mark Dennis Diwa on 6/1/21.
 //
 
+import Kingfisher
 import UIKit
 
 class SearchResultTableViewCell: UITableViewCell {
@@ -16,4 +17,15 @@ class SearchResultTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "SearchResultTableViewCell"
     static let nib = UINib(nibName: reuseIdentifier, bundle: nil)
+    
+    var searchResultDetailViewModel: SearchResultDetailViewModel? {
+        didSet {
+            guard let searchResultDetailViewModel = searchResultDetailViewModel else { return }
+            trackNameLabel.text = searchResultDetailViewModel.cellTrackName
+            priceLabel.text = searchResultDetailViewModel.cellPrice
+            genreLabel.text = searchResultDetailViewModel.cellGenre
+            guard let url = searchResultDetailViewModel.cellArtWork else { return }
+            artworkImageView.kf.setImage(with: url, placeholder: UIImage(named: "img-movie-placeholder"))
+        }
+    }
 }
