@@ -52,6 +52,10 @@ extension SearchResultViewController: UITableViewDataSource, UITableViewDelegate
         return searchResultCell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
 }
 
 extension SearchResultViewController: UISearchBarDelegate {

@@ -24,7 +24,7 @@ class SearchResultDetailViewModel {
     }
     
     var cellGenre: String {
-        return result.primaryGenreName
+        return "\(result.primaryGenreName)-\(result.contentAdvisoryRating)"
     }
     
     var cellArtWork: URL? {
