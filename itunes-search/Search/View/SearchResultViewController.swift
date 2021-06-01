@@ -42,6 +42,8 @@ class SearchResultViewController: UIViewController {
 
 extension SearchResultViewController: UITableViewDataSource, UITableViewDelegate {
     
+    // MARK: - UITableViewDataSource
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchResultViewModel.count
     }
@@ -56,6 +58,8 @@ extension SearchResultViewController: UITableViewDataSource, UITableViewDelegate
         searchResultCell.searchResultDetailViewModel = searchViewModel
         return searchResultCell
     }
+    
+    // MARK: - UITableViewDelegate
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
@@ -74,6 +78,8 @@ extension SearchResultViewController: UITableViewDataSource, UITableViewDelegate
 
 extension SearchResultViewController: UISearchBarDelegate {
     
+    // MARK: - UISearchBarDelegate
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         search()
@@ -81,6 +87,8 @@ extension SearchResultViewController: UISearchBarDelegate {
 }
 
 private extension SearchResultViewController {
+    
+    // MARK: - Setup
     
     func setup() {
         setupTableView()
@@ -109,6 +117,8 @@ private extension SearchResultViewController {
         searchBar.delegate = self
         searchBar.text = searchResultViewModel.searchString
     }
+    
+    // MARK: - Utils
     
     func reloadTable() {
         tableView.tableHeaderView = nil

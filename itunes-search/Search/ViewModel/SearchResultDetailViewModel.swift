@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// I Decided to use MVVM pattern because from what I know. This is the pattern that is widely used by developers. But to be honest MVC is what our team currently use.
 class SearchResultDetailViewModel {
     
     private var result: SearchResult
@@ -14,6 +15,8 @@ class SearchResultDetailViewModel {
     init(result: SearchResult) {
         self.result = result
     }
+    
+    // MARK: - Cell
     
     var cellTrackName: String {
         return result.trackName
@@ -30,6 +33,8 @@ class SearchResultDetailViewModel {
     var cellArtWork: URL? {
         return URL(string: result.artworkUrl60)
     }
+    
+    // MARK: - Detail
     
     var detailTitle: String {
         return result.trackName

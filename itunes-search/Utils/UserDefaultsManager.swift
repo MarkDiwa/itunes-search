@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Decided to use UserDefaults for persistence because this is already available.
 public enum UserDefaultManager {
     private static let itunesAppKey = "itunes.search"
     private static let userLastResultKey = "\(itunesAppKey)-userLastResult"
