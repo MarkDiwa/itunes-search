@@ -14,6 +14,7 @@ struct SearcAPIResult: Codable {
     var errorMessage: String
 }
 
+//TODO: Should provide default value instead of setting as optional. (Like SearchAPIREsult)
 // MARK: - Result
 struct SearchResult: Codable {
     var wrapperType: String
@@ -28,15 +29,15 @@ struct SearchResult: Codable {
     var collectionArtistID: Int?
     var collectionArtistViewURL, collectionViewURL: String?
     var trackViewURL: String
-    var previewURL: String
+    var previewURL: String?
     var artworkUrl30, artworkUrl60, artworkUrl100: String
-    var collectionPrice, trackPrice: Double
+    var collectionPrice, trackPrice: Double?
     var trackRentalPrice, collectionHDPrice, trackHDPrice, trackHDRentalPrice: Double?
     var releaseDate: String
     var collectionExplicitness: String
     var trackExplicitness: String
     var discCount, discNumber, trackCount, trackNumber: Int?
-    var trackTimeMillis: Int
+    var trackTimeMillis: Int?
     var country: String
     var currency: String
     var primaryGenreName: String
@@ -83,15 +84,4 @@ extension SearcAPIResult {
         self.results = try container.decode(forKey: .results, defaultValue: [])
         self.errorMessage = try container.decode(forKey: .errorMessage, defaultValue: "")
     }
-}
-
-extension KeyedDecodingContainer {
-    func decode<T>(forKey key: K, defaultValue: T) throws -> T
-        where T: Decodable {
-            return try decodeIfPresent(T.self, forKey: key) ?? defaultValue
-    }
-}
-
-extension String: LocalizedError {
-    public var errorDescription: String? { return self }
 }

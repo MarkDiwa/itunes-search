@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchResultViewController" customModule="itunes_search" customModuleProvider="target">
             <connections>
+                <outlet property="lastSearchLabel" destination="QlT-op-GDT" id="jAf-Cu-IIW"/>
                 <outlet property="searchBar" destination="V3L-2c-laj" id="U3B-6d-jQn"/>
                 <outlet property="tableView" destination="caa-aU-aLh" id="gfs-xb-4Ph"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -20,15 +21,21 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zMY-Mb-NHU">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="zMY-Mb-NHU">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="V3L-2c-laj">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlT-op-GDT" userLabel="Last Search Label">
+                            <rect key="frame" x="0.0" y="72" width="414" height="50"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="caa-aU-aLh" userLabel="Search Result Table View">
-                            <rect key="frame" x="0.0" y="56" width="414" height="762"/>
+                            <rect key="frame" x="0.0" y="138" width="414" height="680"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
                     </subviews>

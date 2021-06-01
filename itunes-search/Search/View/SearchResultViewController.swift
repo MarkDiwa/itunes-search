@@ -11,6 +11,7 @@ class SearchResultViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var lastSearchLabel: UILabel!
     var searchResultViewModel: SearchResultsViewModel!
     
     init(searchResultViewModel: SearchResultsViewModel) {
@@ -25,6 +26,10 @@ class SearchResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        guard searchResultViewModel.shouldSearchOnViewLoad else {
+            reloadTable()
+            return
+        }
         search()
     }
     
@@ -71,6 +76,8 @@ private extension SearchResultViewController {
     func setup() {
         setupTableView()
         setupSearchBar()
+        guard !searchResultViewModel.lastSearchDateString.isEmpty else { return }
+        lastSearchLabel.text = searchResultViewModel.lastSearchDateString
     }
     
     func setupTableView() {
@@ -106,6 +113,7 @@ private extension SearchResultViewController {
             guard let self = self else { return }
             switch result {
             case .success:
+                self.lastSearchLabel.text = self.searchResultViewModel.lastSearchDateString
                 self.reloadTable()
             case .failure(let error):
                 self.reloadTable()
