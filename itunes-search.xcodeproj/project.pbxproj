@@ -18,6 +18,7 @@
 		7DA3894026666200001577B0 /* SearchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DA3893E26666200001577B0 /* SearchResultViewController.xib */; };
 		7DA38946266662A3001577B0 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA38944266662A3001577B0 /* SearchResultTableViewCell.swift */; };
 		7DA38947266662A3001577B0 /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DA38945266662A3001577B0 /* SearchResultTableViewCell.xib */; };
+		7DA3894B26666586001577B0 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA3894A26666586001577B0 /* SearchResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		7DA3893E26666200001577B0 /* SearchResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultViewController.xib; sourceTree = "<group>"; };
 		7DA38944266662A3001577B0 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		7DA38945266662A3001577B0 /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
+		7DA3894A26666586001577B0 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		8007F969663E59264440F349 /* Pods_itunes_search.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itunes_search.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6B4505847EF30D5D2E104D /* Pods-itunes-search.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunes-search.debug.xcconfig"; path = "Target Support Files/Pods-itunes-search/Pods-itunes-search.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,6 +116,7 @@
 		7DA3893C266661E1001577B0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7DA3894A26666586001577B0 /* SearchResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				7DA38946266662A3001577B0 /* SearchResultTableViewCell.swift in Sources */,
 				7D54D5E726665EE9004C290F /* AppDelegate.swift in Sources */,
 				7DA3893F26666200001577B0 /* SearchResultViewController.swift in Sources */,
+				7DA3894B26666586001577B0 /* SearchResult.swift in Sources */,
 				7D54D5E926665EE9004C290F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
