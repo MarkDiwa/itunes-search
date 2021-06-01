@@ -61,6 +61,15 @@ extension SearchResultViewController: UITableViewDataSource, UITableViewDelegate
         return 80
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let searchResultViewModel = searchResultViewModel.createSearchViewModel(from: indexPath.row) else {
+            return
+        }
+        let userDetailViewController
+            = SearchResultDetailViewController(searchResultDetailViewModel: searchResultViewModel)
+        navigationController?.pushViewController(userDetailViewController, animated: true)
+    }
+    
 }
 
 extension SearchResultViewController: UISearchBarDelegate {

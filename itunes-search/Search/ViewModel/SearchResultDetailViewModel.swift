@@ -20,7 +20,7 @@ class SearchResultDetailViewModel {
     }
     
     var cellPrice: String {
-        return "\(result.trackPrice) \(result.currency)"
+        return "\(result.trackPrice ?? 0) \(result.currency)"
     }
     
     var cellGenre: String {
@@ -29,5 +29,29 @@ class SearchResultDetailViewModel {
     
     var cellArtWork: URL? {
         return URL(string: result.artworkUrl60)
+    }
+    
+    var detailTitle: String {
+        return result.trackName
+    }
+    
+    var detailDirector: String {
+        return "Director: \(result.artistName)"
+    }
+    
+    var detailGenre: String {
+        return "Genre: \(result.primaryGenreName)"
+    }
+    
+    var detailTrackUrl: String {
+        return "URL: \(result.trackViewURL)"
+    }
+    
+    var detailDescription: String {
+        return result.longDescription
+    }
+    
+    var detailArtwork: URL? {
+        return URL(string: result.artworkUrl100)
     }
 }
