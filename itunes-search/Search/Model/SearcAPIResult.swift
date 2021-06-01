@@ -32,18 +32,17 @@ struct SearchResult: Codable {
     var artworkUrl30, artworkUrl60, artworkUrl100: String
     var collectionPrice, trackPrice: Double
     var trackRentalPrice, collectionHDPrice, trackHDPrice, trackHDRentalPrice: Double?
-    var releaseDate: Date
+    var releaseDate: String
     var collectionExplicitness: String
     var trackExplicitness: String
     var discCount, discNumber, trackCount, trackNumber: Int?
     var trackTimeMillis: Int
     var country: String
     var currency: String
-    var primaryGenreName: PrimaryGenreName
-    var contentAdvisoryRating: ContentAdvisoryRating
+    var primaryGenreName: String
+    var contentAdvisoryRating: String
     var shortDescription: String?
     var longDescription: String
-    var hasITunesExtras: Bool = false
 
     enum CodingKeys: String, CodingKey {
         case wrapperType, kind
@@ -73,25 +72,7 @@ struct SearchResult: Codable {
         case  contentAdvisoryRating
         case  shortDescription
         case  longDescription
-        case  hasITunesExtras
     }
-}
-
-enum ContentAdvisoryRating: String, Codable {
-    case ratedG = "G"
-    case ratedM = "M"
-    case ratedMA15 = "MA15+"
-    case ratedPG = "PG"
-}
-
-enum PrimaryGenreName: String, Codable {
-    case actionAdventure = "Action & Adventure"
-    case comedy = "Comedy"
-    case drama = "Drama"
-    case kidsFamily = "Kids & Family"
-    case romance = "Romance"
-    case sciFiFantasy = "Sci-Fi & Fantasy"
-    case sports = "Sports"
 }
 
 extension SearcAPIResult {
