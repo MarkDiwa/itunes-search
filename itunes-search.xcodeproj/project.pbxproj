@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,10 @@
 		7D54D5EE26665EE9004C290F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D54D5EC26665EE9004C290F /* Main.storyboard */; };
 		7D54D5F026665EEB004C290F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D54D5EF26665EEB004C290F /* Assets.xcassets */; };
 		7D54D5F326665EEB004C290F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D54D5F126665EEB004C290F /* LaunchScreen.storyboard */; };
+		7DA3893F26666200001577B0 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA3893D26666200001577B0 /* SearchResultViewController.swift */; };
+		7DA3894026666200001577B0 /* SearchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DA3893E26666200001577B0 /* SearchResultViewController.xib */; };
+		7DA38946266662A3001577B0 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA38944266662A3001577B0 /* SearchResultTableViewCell.swift */; };
+		7DA38947266662A3001577B0 /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DA38945266662A3001577B0 /* SearchResultTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		7D54D5EF26665EEB004C290F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D54D5F226665EEB004C290F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D54D5F426665EEB004C290F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DA3893D26666200001577B0 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		7DA3893E26666200001577B0 /* SearchResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultViewController.xib; sourceTree = "<group>"; };
+		7DA38944266662A3001577B0 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		7DA38945266662A3001577B0 /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
 		8007F969663E59264440F349 /* Pods_itunes_search.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_itunes_search.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6B4505847EF30D5D2E104D /* Pods-itunes-search.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunes-search.debug.xcconfig"; path = "Target Support Files/Pods-itunes-search/Pods-itunes-search.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +71,7 @@
 		7D54D5E526665EE9004C290F /* itunes-search */ = {
 			isa = PBXGroup;
 			children = (
+				7DA38939266661D5001577B0 /* Search */,
 				7D54D5E626665EE9004C290F /* AppDelegate.swift */,
 				7D54D5E826665EE9004C290F /* SceneDelegate.swift */,
 				7D54D5EA26665EE9004C290F /* ViewController.swift */,
@@ -72,6 +81,41 @@
 				7D54D5F426665EEB004C290F /* Info.plist */,
 			);
 			path = "itunes-search";
+			sourceTree = "<group>";
+		};
+		7DA38939266661D5001577B0 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				7DA3893C266661E1001577B0 /* Model */,
+				7DA3893B266661DD001577B0 /* ViewModel */,
+				7DA3893A266661D8001577B0 /* View */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		7DA3893A266661D8001577B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7DA38944266662A3001577B0 /* SearchResultTableViewCell.swift */,
+				7DA3893D26666200001577B0 /* SearchResultViewController.swift */,
+				7DA38945266662A3001577B0 /* SearchResultTableViewCell.xib */,
+				7DA3893E26666200001577B0 /* SearchResultViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7DA3893B266661DD001577B0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7DA3893C266661E1001577B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		91C17A077BF257F0777619E9 /* Frameworks */ = {
@@ -88,7 +132,6 @@
 				BA6B4505847EF30D5D2E104D /* Pods-itunes-search.debug.xcconfig */,
 				1BF03B27FF2E46F422E0FCCD /* Pods-itunes-search.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -104,6 +147,7 @@
 				7D54D5E026665EE9004C290F /* Frameworks */,
 				7D54D5E126665EE9004C290F /* Resources */,
 				4C86E26521D6819AF8E3A6E1 /* [CP] Embed Pods Frameworks */,
+				7DA3894226666217001577B0 /* Linter */,
 			);
 			buildRules = (
 			);
@@ -152,8 +196,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D54D5F326665EEB004C290F /* LaunchScreen.storyboard in Resources */,
+				7DA38947266662A3001577B0 /* SearchResultTableViewCell.xib in Resources */,
 				7D54D5F026665EEB004C290F /* Assets.xcassets in Resources */,
 				7D54D5EE26665EE9004C290F /* Main.storyboard in Resources */,
+				7DA3894026666200001577B0 /* SearchResultViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +222,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-itunes-search/Pods-itunes-search-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		7DA3894226666217001577B0 /* Linter */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Linter;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		850D29BA261C5DB7FC59C9B3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -207,7 +271,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D54D5EB26665EE9004C290F /* ViewController.swift in Sources */,
+				7DA38946266662A3001577B0 /* SearchResultTableViewCell.swift in Sources */,
 				7D54D5E726665EE9004C290F /* AppDelegate.swift in Sources */,
+				7DA3893F26666200001577B0 /* SearchResultViewController.swift in Sources */,
 				7D54D5E926665EE9004C290F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
